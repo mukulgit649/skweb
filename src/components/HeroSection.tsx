@@ -5,25 +5,36 @@ import heroBackground from "@/assets/hero-bg.jpg";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Animated Wave Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="wave-bg" />
+        <div className="wave-bg" />
+        <div className="wave-bg" />
+      </div>
+      
+      {/* Background Image with Enhanced Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBackground})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/90" />
+        <div className="absolute inset-0 bg-black/70" />
       </div>
       
-      {/* Floating Particles Animation */}
+      {/* Enhanced Floating Particles Animation */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(30)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-primary/30 rounded-full animate-pulse"
+            className="absolute rounded-full animate-pulse"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 2}s`,
-              animationDuration: `${2 + Math.random() * 3}s`
+              width: `${Math.random() * 6 + 2}px`,
+              height: `${Math.random() * 6 + 2}px`,
+              background: i % 3 === 0 ? 'hsl(188 100% 43% / 0.3)' : 
+                         i % 3 === 1 ? 'hsl(193 82% 31% / 0.2)' : 'hsl(0 0% 80% / 0.1)',
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${3 + Math.random() * 4}s`
             }}
           />
         ))}
@@ -32,14 +43,16 @@ const HeroSection = () => {
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         {/* Name with Kinetic Animation */}
         <h1 className="kinetic-title text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
-          <span className="text-gradient">Dr. Sumit Kumar</span>
+          <span className="text-gradient bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+            Dr. Sumit Kumar
+          </span>
           <br />
-          <span className="text-foreground">Mehta</span>
+          <span className="text-white">Mehta</span>
         </h1>
         
         {/* Title */}
         <div className="kinetic-title opacity-0 animate-[kinetic-reveal_1s_ease-out_0.3s_forwards]">
-          <p className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-4 font-light">
+          <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 mb-4 font-light">
             SERB-National Postdoctoral Fellow at{" "}
             <span className="text-primary font-medium">IIT Guwahati</span>
           </p>
