@@ -2,41 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Dr. Sumit Kumar Mehta Portfolio Design System
+All colors MUST be HSL for proper theme support.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    /* Portfolio Color Scheme - Deep Navy + Teal Accents */
+    --background: 209 84% 12%;
+    --foreground: 0 0% 98%;
+    
+    --card: 209 84% 15%;
+    --card-foreground: 0 0% 95%;
+    
+    --popover: 209 84% 15%;
+    --popover-foreground: 0 0% 95%;
+    
+    --primary: 188 100% 43%;
+    --primary-foreground: 209 84% 12%;
+    
+    --secondary: 209 84% 18%;
+    --secondary-foreground: 0 0% 90%;
+    
+    --muted: 209 84% 20%;
+    --muted-foreground: 0 0% 70%;
+    
+    --accent: 188 100% 43%;
+    --accent-foreground: 209 84% 12%;
+    
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    
+    --border: 209 84% 25%;
+    --input: 209 84% 18%;
+    --ring: 188 100% 43%;
+    
+    --radius: 0.75rem;
+    
+    /* Portfolio-specific Design Tokens */
+    --hero-glow: 188 100% 43%;
+    --hero-secondary: 193 82% 31%;
+    --glass-bg: 209 84% 15% / 0.8;
+    --glass-border: 188 100% 43% / 0.3;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(209 84% 12%), hsl(193 82% 31%));
+    --gradient-card: linear-gradient(145deg, hsl(209 84% 15%), hsl(209 84% 18%));
+    --gradient-accent: linear-gradient(90deg, hsl(188 100% 43%), hsl(193 82% 31%));
+    --gradient-glow: radial-gradient(circle at center, hsl(188 100% 43% / 0.3), transparent 70%);
+    
+    /* Shadows and Effects */
+    --shadow-glow: 0 0 40px hsl(188 100% 43% / 0.3);
+    --shadow-card: 0 8px 32px hsl(209 84% 8% / 0.4);
+    --shadow-elevated: 0 20px 60px hsl(209 84% 8% / 0.6);
+    
+    /* Animation Timings */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +122,117 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    background: var(--gradient-hero);
+    background-attachment: fixed;
   }
+}
+
+@layer components {
+  /* Glass Morphism Components */
+  .glass-card {
+    @apply backdrop-blur-md border;
+    background: hsl(var(--glass-bg));
+    border-color: hsl(var(--glass-border));
+    box-shadow: var(--shadow-card);
+  }
+  
+  .hero-glow {
+    @apply relative;
+    filter: drop-shadow(var(--shadow-glow));
+  }
+  
+  .hero-glow::before {
+    content: '';
+    @apply absolute inset-0 -z-10 rounded-full;
+    background: var(--gradient-glow);
+    animation: pulse 2s infinite;
+  }
+  
+  /* Interactive Animations */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-lift:hover {
+    @apply scale-105;
+    box-shadow: var(--shadow-elevated);
+  }
+  
+  .kinetic-title {
+    @apply opacity-0 translate-y-10;
+    animation: kinetic-reveal 1s ease-out forwards;
+  }
+  
+  .timeline-item {
+    @apply opacity-0 translate-x-10;
+    animation: slide-in-right 0.6s ease-out forwards;
+  }
+  
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 3px;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes kinetic-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-effect {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsl(var(--primary) / 0.2),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
 }
