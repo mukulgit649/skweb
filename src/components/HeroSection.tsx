@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Download, ExternalLink } from "lucide-react";
+import { Download, ExternalLink, FileText } from "lucide-react";
+import { motion } from "framer-motion";
 import heroBackground from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
@@ -41,73 +42,160 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        {/* Name with Kinetic Animation */}
-        <h1 className="kinetic-title text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
-          <span className="text-gradient bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+        {/* Name with Enhanced Kinetic Animation */}
+        <motion.h1 
+          className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6"
+          initial={{ opacity: 0, y: 50, scale: 0.9 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          <motion.span 
+            className="bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent"
+            animate={{ 
+              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+            }}
+            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            style={{ backgroundSize: "200% 200%" }}
+          >
             Dr. Sumit Kumar
-          </span>
+          </motion.span>
           <br />
-          <span className="text-white">Mehta</span>
-        </h1>
+          <motion.span 
+            className="text-white"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+          >
+            Mehta
+          </motion.span>
+        </motion.h1>
         
-        {/* Title */}
-        <div className="kinetic-title opacity-0 animate-[kinetic-reveal_1s_ease-out_0.3s_forwards]">
+        {/* Title with Staggered Animation */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.8 }}
+        >
           <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 mb-4 font-light">
             SERB-National Postdoctoral Fellow at{" "}
             <span className="text-primary font-medium">IIT Guwahati</span>
           </p>
-        </div>
+        </motion.div>
         
-        {/* Subtitle */}
-        <div className="kinetic-title opacity-0 animate-[kinetic-reveal_1s_ease-out_0.6s_forwards]">
-          <p className="text-lg sm:text-xl text-primary mb-8 hero-glow">
+        {/* Subtitle with Pulsing Glow */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.1, duration: 0.8 }}
+        >
+          <motion.p 
+            className="text-lg sm:text-xl text-primary mb-8 font-medium"
+            animate={{ 
+              textShadow: [
+                "0 0 20px hsl(188 100% 43% / 0.5)",
+                "0 0 30px hsl(188 100% 43% / 0.8)",
+                "0 0 20px hsl(188 100% 43% / 0.5)"
+              ]
+            }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
             World's Top 2% Scientist (Elsevier)
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         
-        {/* Expertise Tags */}
-        <div className="kinetic-title opacity-0 animate-[kinetic-reveal_1s_ease-out_0.9s_forwards]">
+        {/* Enhanced Expertise Tags */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.4, duration: 0.8 }}
+        >
           <div className="flex flex-wrap justify-center gap-3 mb-10 font-mono text-sm">
-            {["CFD", "Microfluidics", "Nanofluidics", "Heat Transfer", "COMSOL", "MATLAB"].map((tag) => (
-              <span
+            {["CFD", "Microfluidics", "Nanofluidics", "Heat Transfer", "COMSOL", "MATLAB"].map((tag, index) => (
+              <motion.span
                 key={tag}
-                className="glass-card px-4 py-2 text-primary border-primary/50 hover:border-primary transition-colors"
+                className="glass-card px-4 py-2 text-primary border-primary/50 hover:border-primary transition-all cursor-default"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.6 + index * 0.1, duration: 0.5 }}
+                whileHover={{ 
+                  scale: 1.05, 
+                  boxShadow: "0 0 20px hsl(188 100% 43% / 0.4)",
+                  borderColor: "hsl(188 100% 43%)"
+                }}
               >
                 {tag}
-              </span>
+              </motion.span>
             ))}
           </div>
-        </div>
+        </motion.div>
         
-        {/* CTA Buttons */}
-        <div className="kinetic-title opacity-0 animate-[kinetic-reveal_1s_ease-out_1.2s_forwards]">
+        {/* Enhanced CTA Buttons with Glowing Effects */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.8, duration: 0.8 }}
+        >
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="hero-glow hover-lift group"
-              onClick={() => document.getElementById('research')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              <ExternalLink className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
-              View Research
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="glass-card border-primary/50 hover:border-primary hover-lift group"
-            >
-              <Download className="mr-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
-              Download CV
-            </Button>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button 
+                size="lg" 
+                className="relative overflow-hidden group bg-primary hover:bg-primary/90"
+                onClick={() => document.getElementById('research')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                  animate={{ x: ["-100%", "100%"] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                />
+                <ExternalLink className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform relative z-10" />
+                <span className="relative z-10">View Research</span>
+              </Button>
+            </motion.div>
+            
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="glass-card border-primary/50 hover:border-primary hover:bg-primary/10 group relative overflow-hidden"
+              >
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent"
+                  animate={{ x: ["-100%", "100%"] }}
+                  transition={{ duration: 2.5, repeat: Infinity, ease: "linear" }}
+                />
+                <Download className="mr-2 h-5 w-5 group-hover:translate-y-1 transition-transform relative z-10" />
+                <span className="relative z-10">Download CV</span>
+              </Button>
+            </motion.div>
+            
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="glass-card border-primary/50 hover:border-primary hover:bg-primary/10 group"
+              >
+                <FileText className="mr-2 h-5 w-5 group-hover:rotate-6 transition-transform" />
+                Research Portfolio
+              </Button>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
       
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse" />
+      {/* Enhanced Scroll Indicator */}
+      <motion.div 
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <div className="w-6 h-10 border-2 border-primary/70 rounded-full flex justify-center backdrop-blur-sm">
+          <motion.div 
+            className="w-1 h-3 bg-primary rounded-full mt-2"
+            animate={{ opacity: [0.3, 1, 0.3] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

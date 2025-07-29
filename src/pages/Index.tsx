@@ -6,6 +6,7 @@ import PublicationsSection from "@/components/PublicationsSection";
 import TimelineSection from "@/components/TimelineSection";
 import AchievementsSection from "@/components/AchievementsSection";
 import ContactSection from "@/components/ContactSection";
+import BackToTop from "@/components/BackToTop";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <TimelineSection />
       <AchievementsSection />
       <ContactSection />
+      <BackToTop />
     </div>
   );
 };
