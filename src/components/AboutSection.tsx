@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
@@ -6,7 +7,7 @@ import profileImage from "@/assets/profile-dr-mehta.jpg";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-32 px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-32 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           className="text-center mb-20"
@@ -15,7 +16,7 @@ const AboutSection = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
             About <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Dr. Mehta</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -32,21 +33,24 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <Card className="glass-card p-8 hover-lift">
+            <Card className="glass-card p-8 hover-lift border-primary/20">
               {/* Profile Image */}
               <div className="relative mb-8">
                 <div className="aspect-square rounded-2xl overflow-hidden mb-6 relative group">
                   <img 
                     src={profileImage} 
-                    alt="Dr. Sumit Kumar Mehta"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    alt="Dr. Sumit Kumar Mehta - SERB-National Postdoctoral Fellow at IIT Guwahati"
+                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    onError={(e) => {
+                      console.log('Image failed to load:', e);
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 
                 {/* Status Badge */}
                 <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
-                  <div className="glass-card px-4 py-2 border-primary/50">
+                  <div className="glass-card px-4 py-2 border-primary/50 bg-background/80 backdrop-blur-md">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                       <span className="text-sm text-primary font-medium">Available for Collaboration</span>
