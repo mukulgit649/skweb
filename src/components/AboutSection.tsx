@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { MapPin, Languages, Award, Download, GraduationCap, Building, Calendar } from "lucide-react";
-import profileImage from "@/assets/profile-image.jpg";
+import profileImage from "@/assets/profile-dr-mehta.jpg";
 
 const AboutSection = () => {
   return (
