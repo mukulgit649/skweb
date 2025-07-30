@@ -98,9 +98,9 @@ const HeroSection = () => {
               ]
             }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
-            World's Top 2% Scientist (Elsevier)
-          </motion.p>
+           >
+             Top 2% Scientists 2024, Stanford University Rankings
+           </motion.p>
         </motion.div>
         
         {/* Enhanced Expertise Tags */}

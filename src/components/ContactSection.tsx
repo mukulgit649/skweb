@@ -50,22 +50,23 @@ const ContactSection = () => {
                   <div className="p-3 bg-primary/20 rounded-lg">
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Email</h4>
-                    <p className="text-muted-foreground">sumit090391@gmail.com</p>
-                    <p className="text-sm text-muted-foreground">Professional inquiries welcome</p>
-                  </div>
+                   <div>
+                     <h4 className="font-semibold mb-1">Email</h4>
+                     <p className="text-muted-foreground">sumitkrmehta@rnd.iitg.ac.in</p>
+                     <p className="text-muted-foreground">sumit090391@gmail.com</p>
+                     <p className="text-sm text-muted-foreground">Professional inquiries welcome</p>
+                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-primary/20 rounded-lg">
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Location</h4>
-                    <p className="text-muted-foreground">Assam, India</p>
-                    <p className="text-sm text-muted-foreground">Indian Institute of Technology Guwahati</p>
-                  </div>
+                   <div>
+                     <h4 className="font-semibold mb-1">Location</h4>
+                     <p className="text-muted-foreground">IIT Guwahati, Assam, India</p>
+                     <p className="text-sm text-muted-foreground">Phone: +91 9678019830</p>
+                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">

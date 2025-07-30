@@ -63,8 +63,8 @@ const AboutSection = () => {
                       <MapPin className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-400">Location</p>
-                      <p className="font-semibold text-white">Assam, India</p>
+                       <p className="text-sm text-gray-400">Location</p>
+                       <p className="font-semibold text-white">IIT Guwahati, Assam</p>
                     </div>
                   </div>
                 </Card>
@@ -87,8 +87,8 @@ const AboutSection = () => {
                       <Award className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-400">Recognition</p>
-                      <p className="font-semibold text-white">Wiley Top Cited Paper</p>
+                       <p className="text-sm text-gray-400">Recognition</p>
+                       <p className="font-semibold text-white">Stanford Top 2% Scientist</p>
                     </div>
                   </div>
                 </Card>
@@ -109,12 +109,11 @@ const AboutSection = () => {
               <h3 className="text-3xl font-bold mb-6 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
                 Biography
               </h3>
-              <p className="text-lg leading-relaxed text-gray-300 mb-8">
-                Dr. Sumit Kumar Mehta is a multidisciplinary researcher working on fluid mechanics, 
-                micro/nanofluidics, electrokinetics, and heat transfer simulations using COMSOL and 
-                ANSYS Fluent. He holds a PhD from NIT Silchar and currently works as a postdoctoral 
-                fellow at IIT Guwahati.
-              </p>
+               <p className="text-lg leading-relaxed text-gray-300 mb-8">
+                 I have proficiency modelling micro and nano scale flow and ionic transport phenomenon using finite element method-based solver, COMSOL Multiphysics. 
+                 Also, the experimental and mathematical modelling has been recently done for nutrient transport inside the plant root in flowing condition. 
+                 Further, I have proficiency modelling forced and natural convective heat transport inside complex geometries utilizing Newtonian and non-Newtonian fluids numerically using ANSYS Fluent and COMSOL Multiphysics.
+               </p>
               
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
