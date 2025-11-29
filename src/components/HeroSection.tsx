@@ -12,15 +12,15 @@ const HeroSection = () => {
         <div className="wave-bg" />
         <div className="wave-bg" />
       </div>
-      
+
       {/* Background Image with Enhanced Overlay */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBackground})` }}
       >
         <div className="absolute inset-0 bg-black/70" />
       </div>
-      
+
       {/* Enhanced Floating Particles Animation */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(30)].map((_, i) => (
@@ -32,8 +32,8 @@ const HeroSection = () => {
               top: `${Math.random() * 100}%`,
               width: `${Math.random() * 6 + 2}px`,
               height: `${Math.random() * 6 + 2}px`,
-              background: i % 3 === 0 ? 'hsl(188 100% 43% / 0.3)' : 
-                         i % 3 === 1 ? 'hsl(193 82% 31% / 0.2)' : 'hsl(0 0% 80% / 0.1)',
+              background: i % 3 === 0 ? 'hsl(188 100% 43% / 0.3)' :
+                i % 3 === 1 ? 'hsl(193 82% 31% / 0.2)' : 'hsl(0 0% 80% / 0.1)',
               animationDelay: `${Math.random() * 3}s`,
               animationDuration: `${3 + Math.random() * 4}s`
             }}
@@ -43,15 +43,15 @@ const HeroSection = () => {
 
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         {/* Name with Enhanced Kinetic Animation - Fixed to single line */}
-        <motion.h1 
+        <motion.h1
           className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 whitespace-nowrap"
           initial={{ opacity: 0, y: 50, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <motion.span 
+          <motion.span
             className="bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent inline-block"
-            animate={{ 
+            animate={{
               backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
             }}
             transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
@@ -60,28 +60,38 @@ const HeroSection = () => {
             Dr. Sumit Kumar Mehta
           </motion.span>
         </motion.h1>
-        
+
         {/* Title with Staggered Animation */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.8 }}
         >
-          <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 mb-4 font-light">
-            SERB-National Postdoctoral Fellow at{" "}
-            <span className="text-primary font-medium">IIT Guwahati</span>
-          </p>
+          <div className="mb-6">
+            <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 font-light mb-2">
+              National Post Doctoral Fellow
+            </p>
+            <p className="text-sm sm:text-base text-gray-400 font-light mb-4">
+              (Anusandhan National Research Foundation, Government of India)
+            </p>
+            <p className="text-lg sm:text-xl text-primary font-medium">
+              Department of Mechanical Engineering
+            </p>
+            <p className="text-base sm:text-lg text-gray-300">
+              Indian Institute of Technology Guwahati, Guwahati-781039, Assam
+            </p>
+          </div>
         </motion.div>
-        
+
         {/* Subtitle with Pulsing Glow */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1, duration: 0.8 }}
         >
-          <motion.p 
+          <motion.p
             className="text-lg sm:text-xl text-primary mb-8 font-medium"
-            animate={{ 
+            animate={{
               textShadow: [
                 "0 0 20px hsl(188 100% 43% / 0.5)",
                 "0 0 30px hsl(188 100% 43% / 0.8)",
@@ -89,11 +99,11 @@ const HeroSection = () => {
               ]
             }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-           >
-             Top 2% Scientists 2024, Stanford University Rankings
-           </motion.p>
+          >
+            World's top 2% scientists 2025, 2024 (Stanford University and Elsevier)
+          </motion.p>
         </motion.div>
-        
+
         {/* Enhanced Expertise Tags */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -108,8 +118,8 @@ const HeroSection = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.6 + index * 0.1, duration: 0.5 }}
-                whileHover={{ 
-                  scale: 1.05, 
+                whileHover={{
+                  scale: 1.05,
                   boxShadow: "0 0 20px hsl(188 100% 43% / 0.4)",
                   borderColor: "hsl(188 100% 43%)"
                 }}
@@ -119,7 +129,7 @@ const HeroSection = () => {
             ))}
           </div>
         </motion.div>
-        
+
         {/* Enhanced CTA Buttons with Glowing Effects */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -128,8 +138,8 @@ const HeroSection = () => {
         >
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="relative overflow-hidden group bg-primary hover:bg-primary/90"
                 onClick={() => document.getElementById('research')?.scrollIntoView({ behavior: 'smooth' })}
               >
@@ -142,11 +152,11 @@ const HeroSection = () => {
                 <span className="relative z-10">View Research</span>
               </Button>
             </motion.div>
-            
+
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button 
-                variant="outline" 
-                size="lg" 
+              <Button
+                variant="outline"
+                size="lg"
                 className="glass-card border-primary/50 hover:border-primary hover:bg-primary/10 group relative overflow-hidden"
               >
                 <motion.div
@@ -158,11 +168,11 @@ const HeroSection = () => {
                 <span className="relative z-10">Download CV</span>
               </Button>
             </motion.div>
-            
+
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button 
-                variant="outline" 
-                size="lg" 
+              <Button
+                variant="outline"
+                size="lg"
                 className="glass-card border-primary/50 hover:border-primary hover:bg-primary/10 group"
               >
                 <FileText className="mr-2 h-5 w-5 group-hover:rotate-6 transition-transform" />
@@ -172,15 +182,15 @@ const HeroSection = () => {
           </div>
         </motion.div>
       </div>
-      
+
       {/* Enhanced Scroll Indicator */}
-      <motion.div 
+      <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
         <div className="w-6 h-10 border-2 border-primary/70 rounded-full flex justify-center backdrop-blur-sm">
-          <motion.div 
+          <motion.div
             className="w-1 h-3 bg-primary rounded-full mt-2"
             animate={{ opacity: [0.3, 1, 0.3] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}

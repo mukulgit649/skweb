@@ -1,15 +1,13 @@
-
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { MapPin, Languages, Award, Download, GraduationCap, Building, Calendar } from "lucide-react";
-import profileImage from "@/assets/profile-dr-mehta.jpg";
 
 const AboutSection = () => {
   return (
     <section id="about" className="py-32 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-7xl mx-auto">
-        <motion.div 
+        <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -26,7 +24,7 @@ const AboutSection = () => {
 
         <div className="grid lg:grid-cols-5 gap-12 items-start">
           {/* Professional Image Column */}
-          <motion.div 
+          <motion.div
             className="lg:col-span-2"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -37,17 +35,18 @@ const AboutSection = () => {
               {/* Profile Image */}
               <div className="relative mb-8">
                 <div className="aspect-square rounded-2xl overflow-hidden mb-6 relative group">
-                  <img 
-                    src={profileImage} 
-                    alt="Dr. Sumit Kumar Mehta - SERB-National Postdoctoral Fellow at IIT Guwahati"
+                  <img
+                    src="/sumit.png"
+                    alt="Dr. Sumit Kumar Mehta - National Post Doctoral Fellow at IIT Guwahati"
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     onError={(e) => {
                       console.log('Image failed to load:', e);
+                      e.currentTarget.src = "/placeholder.svg";
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                
+
                 {/* Status Badge */}
                 <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
                   <div className="glass-card px-4 py-2 border-primary/50 bg-background/80 backdrop-blur-md">
@@ -58,7 +57,7 @@ const AboutSection = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Quick Info Cards */}
               <div className="space-y-4">
                 <Card className="glass-card p-4 border-primary/30 hover:border-primary/60 transition-colors">
@@ -67,12 +66,12 @@ const AboutSection = () => {
                       <MapPin className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                       <p className="text-sm text-gray-400">Location</p>
-                       <p className="font-semibold text-white">IIT Guwahati, Assam</p>
+                      <p className="text-sm text-gray-400">Location</p>
+                      <p className="font-semibold text-white">IIT Guwahati, Assam</p>
                     </div>
                   </div>
                 </Card>
-                
+
                 <Card className="glass-card p-4 border-primary/30 hover:border-primary/60 transition-colors">
                   <div className="flex items-center gap-3">
                     <div className="p-2 bg-primary/20 rounded-lg">
@@ -84,15 +83,15 @@ const AboutSection = () => {
                     </div>
                   </div>
                 </Card>
-                
+
                 <Card className="glass-card p-4 border-primary/30 hover:border-primary/60 transition-colors">
                   <div className="flex items-center gap-3">
                     <div className="p-2 bg-primary/20 rounded-lg">
                       <Award className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                       <p className="text-sm text-gray-400">Recognition</p>
-                       <p className="font-semibold text-white">Stanford Top 2% Scientist</p>
+                      <p className="text-sm text-gray-400">Recognition</p>
+                      <p className="font-semibold text-white">World's top 2% scientists 2025, 2024</p>
                     </div>
                   </div>
                 </Card>
@@ -101,7 +100,7 @@ const AboutSection = () => {
           </motion.div>
 
           {/* Bio and Timeline Column */}
-          <motion.div 
+          <motion.div
             className="lg:col-span-3 space-y-8"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -113,12 +112,12 @@ const AboutSection = () => {
               <h3 className="text-3xl font-bold mb-6 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
                 Biography
               </h3>
-               <p className="text-lg leading-relaxed text-gray-300 mb-8">
-                 I have proficiency modelling micro and nano scale flow and ionic transport phenomenon using finite element method-based solver, COMSOL Multiphysics. 
-                 Also, the experimental and mathematical modelling has been recently done for nutrient transport inside the plant root in flowing condition. 
-                 Further, I have proficiency modelling forced and natural convective heat transport inside complex geometries utilizing Newtonian and non-Newtonian fluids numerically using ANSYS Fluent and COMSOL Multiphysics.
-               </p>
-              
+              <p className="text-lg leading-relaxed text-gray-300 mb-8">
+                I have proficiency modelling micro and nano scale flow and ionic transport phenomenon using finite element method-based solver, COMSOL Multiphysics.
+                Also, the experimental and mathematical modelling has been recently done for nutrient transport inside the plant root in flowing condition.
+                Further, I have proficiency modelling forced and natural convective heat transport inside complex geometries utilizing Newtonian and non-Newtonian fluids numerically using ANSYS Fluent and COMSOL Multiphysics.
+              </p>
+
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <h4 className="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
@@ -128,12 +127,12 @@ const AboutSection = () => {
                   <div className="space-y-3">
                     {[
                       "Academic Leadership",
-                      "Scientific Writing", 
+                      "Scientific Writing",
                       "Experimental Analysis",
                       "Computational Modeling"
                     ].map((skill, index) => (
-                      <motion.div 
-                        key={skill} 
+                      <motion.div
+                        key={skill}
                         className="flex items-center gap-3"
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -146,7 +145,7 @@ const AboutSection = () => {
                     ))}
                   </div>
                 </div>
-                
+
                 <div>
                   <h4 className="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
                     <Building className="h-5 w-5" />
@@ -155,12 +154,12 @@ const AboutSection = () => {
                   <div className="space-y-3">
                     {[
                       "Computational Fluid Dynamics",
-                      "Microfluidics & Nanofluidics", 
+                      "Microfluidics & Nanofluidics",
                       "Heat Transfer Analysis",
                       "Multi-physics Simulations"
                     ].map((focus, index) => (
-                      <motion.div 
-                        key={focus} 
+                      <motion.div
+                        key={focus}
                         className="flex items-center gap-3"
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -185,30 +184,30 @@ const AboutSection = () => {
               <div className="relative">
                 {/* Timeline Line */}
                 <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-primary/30" />
-                
+
                 <div className="space-y-8">
                   {[
-                    { 
-                      year: "2024-Present", 
-                      title: "SERB-NPDF Fellow", 
-                      org: "IIT Guwahati",
-                      description: "Leading advanced research in microfluidics and electrokinetic phenomena"
+                    {
+                      year: "2024-Present",
+                      title: "National Post Doctoral Fellow",
+                      org: "Anusandhan National Research Foundation, Govt. of India",
+                      description: "Leading advanced research in microfluidics and electrokinetic phenomena at IIT Guwahati"
                     },
-                    { 
-                      year: "2022-2024", 
-                      title: "R&D Project Staff", 
+                    {
+                      year: "2022-2024",
+                      title: "R&D Project Staff",
                       org: "IIT Guwahati",
                       description: "Research and development on computational fluid dynamics applications"
                     },
-                    { 
-                      year: "2017-2022", 
-                      title: "Research Scholar", 
+                    {
+                      year: "2017-2022",
+                      title: "Research Scholar",
                       org: "NIT Silchar",
                       description: "Doctoral research on electroosmotic flows and microfluidic mixing"
                     }
                   ].map((item, index) => (
-                    <motion.div 
-                      key={index} 
+                    <motion.div
+                      key={index}
                       className="relative flex gap-6 items-start"
                       initial={{ opacity: 0, x: 50 }}
                       whileInView={{ opacity: 1, x: 0 }}
@@ -217,7 +216,7 @@ const AboutSection = () => {
                     >
                       {/* Timeline Dot */}
                       <div className="relative z-10 w-4 h-4 bg-primary rounded-full border-4 border-background flex-shrink-0 mt-2" />
-                      
+
                       <div className="min-w-0 flex-1">
                         <div className="glass-card p-6 border-primary/30 hover:border-primary/60 transition-colors">
                           <div className="flex flex-wrap items-center gap-3 mb-3">

@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Linkedin, Phone, Send } from "lucide-react";
+import { Mail, MapPin, Linkedin, Send } from "lucide-react";
 import { useState } from "react";
 
 const ContactSection = () => {
@@ -34,7 +34,7 @@ const ContactSection = () => {
             Get in <span className="text-gradient">Touch</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Interested in collaboration, research opportunities, or academic discussions? 
+            Interested in collaboration, research opportunities, or academic discussions?
             Let's connect and explore possibilities together.
           </p>
         </div>
@@ -44,29 +44,29 @@ const ContactSection = () => {
           <div className="space-y-8">
             <Card className="glass-card p-8 hover-lift">
               <h3 className="text-2xl font-bold mb-6 text-gradient">Contact Information</h3>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-primary/20 rounded-lg">
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
-                   <div>
-                     <h4 className="font-semibold mb-1">Email</h4>
-                     <p className="text-muted-foreground">sumitkrmehta@rnd.iitg.ac.in</p>
-                     <p className="text-muted-foreground">sumit090391@gmail.com</p>
-                     <p className="text-sm text-muted-foreground">Professional inquiries welcome</p>
-                   </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Email</h4>
+                    <p className="text-muted-foreground">sumitkrmehta@rnd.iitg.ac.in</p>
+                    <p className="text-muted-foreground">sumit090391@gmail.com</p>
+                    <p className="text-sm text-muted-foreground">Professional inquiries welcome</p>
+                  </div>
                 </div>
 
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-primary/20 rounded-lg">
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
-                   <div>
-                     <h4 className="font-semibold mb-1">Location</h4>
-                     <p className="text-muted-foreground">IIT Guwahati, Assam, India</p>
-                     <p className="text-sm text-muted-foreground">Phone: +91 9678019830</p>
-                   </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Location</h4>
+                    <p className="text-muted-foreground">Department of Mechanical Engineering</p>
+                    <p className="text-muted-foreground">IIT Guwahati, Assam, India</p>
+                  </div>
                 </div>
 
                 <div className="flex items-start gap-4">
@@ -74,9 +74,21 @@ const ContactSection = () => {
                     <Linkedin className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">LinkedIn</h4>
-                    <p className="text-muted-foreground">dr-sumit-kumar-mehta-b5abbb9a</p>
-                    <p className="text-sm text-muted-foreground">Connect for professional networking</p>
+                    <h4 className="font-semibold mb-2">Professional Profiles</h4>
+                    <div className="flex flex-col gap-2 text-sm">
+                      <a href="https://orcid.org/0000-0001-8806-3767" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 bg-primary rounded-full"></span> ORCID
+                      </a>
+                      <a href="https://scholar.google.co.in/citations?user=Rk-6RA0AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 bg-primary rounded-full"></span> Google Scholar
+                      </a>
+                      <a href="https://www.researchgate.net/profile/Sumit_Mehta4" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 bg-primary rounded-full"></span> ResearchGate
+                      </a>
+                      <a href="https://www.webofscience.com/wos/author/record/2141279" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 bg-primary rounded-full"></span> Web of Science
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -107,18 +119,20 @@ const ContactSection = () => {
 
             {/* Social Links */}
             <div className="flex gap-4">
-              <Button 
-                variant="outline" 
-                size="lg" 
+              <Button
+                variant="outline"
+                size="lg"
                 className="glass-card border-primary/50 hover:border-primary hover-lift flex-1"
+                onClick={() => window.location.href = 'mailto:sumitkrmehta@rnd.iitg.ac.in'}
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Email
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
+              <Button
+                variant="outline"
+                size="lg"
                 className="glass-card border-primary/50 hover:border-primary hover-lift flex-1"
+                onClick={() => window.open('https://www.linkedin.com/in/dr-sumit-kumar-mehta-b5abbb9a/', '_blank')}
               >
                 <Linkedin className="mr-2 h-5 w-5" />
                 LinkedIn
@@ -129,7 +143,7 @@ const ContactSection = () => {
           {/* Contact Form */}
           <Card className="glass-card p-8 hover-lift">
             <h3 className="text-2xl font-bold mb-6 text-gradient">Send a Message</h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 <div>
@@ -194,9 +208,9 @@ const ContactSection = () => {
                 />
               </div>
 
-              <Button 
-                type="submit" 
-                size="lg" 
+              <Button
+                type="submit"
+                size="lg"
                 className="w-full hero-glow hover-lift group"
               >
                 <Send className="mr-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

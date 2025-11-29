@@ -103,14 +103,14 @@ const ResearchSection = () => {
     { id: "theoretical", label: "Theoretical", count: researchAreas.filter(r => r.category === "theoretical").length }
   ];
 
-  const filteredResearch = selectedFilter === "all" 
-    ? researchAreas 
+  const filteredResearch = selectedFilter === "all"
+    ? researchAreas
     : researchAreas.filter(area => area.category === selectedFilter);
 
   return (
     <section id="research" className="py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <motion.div 
+        <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -123,18 +123,17 @@ const ResearchSection = () => {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
             Exploring the frontiers of fluid mechanics, microfluidics, and computational science
           </p>
-          
+
           {/* Enhanced Filter Tags */}
           <div className="flex flex-wrap justify-center gap-4">
             {filters.map((filter) => (
               <motion.button
                 key={filter.id}
                 onClick={() => setSelectedFilter(filter.id)}
-                className={`px-6 py-3 rounded-full text-sm font-medium transition-all relative overflow-hidden group ${
-                  selectedFilter === filter.id
+                className={`px-6 py-3 rounded-full text-sm font-medium transition-all relative overflow-hidden group ${selectedFilter === filter.id
                     ? "bg-primary text-primary-foreground shadow-glow"
                     : "glass-card border-primary/30 hover:border-primary text-gray-300 hover:text-white"
-                }`}
+                  }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -162,7 +161,7 @@ const ResearchSection = () => {
           {filteredResearch.map((area, index) => {
             const Icon = area.icon;
             const isHovered = hoveredProject === area.id;
-            
+
             return (
               <motion.div
                 key={area.id}
@@ -172,19 +171,18 @@ const ResearchSection = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -10 }}
               >
-                <Card 
+                <Card
                   className="glass-card group cursor-pointer relative overflow-hidden h-full"
                   onMouseEnter={() => setHoveredProject(area.id)}
                   onMouseLeave={() => setHoveredProject(null)}
                 >
                   {/* Status Badge */}
                   <div className="absolute top-4 right-4 z-20">
-                    <Badge 
-                      className={`${
-                        area.status === "Active" ? "bg-green-500/20 text-green-400 border-green-500/50" :
-                        area.status === "Ongoing" ? "bg-yellow-500/20 text-yellow-400 border-yellow-500/50" :
-                        "bg-blue-500/20 text-blue-400 border-blue-500/50"
-                      }`}
+                    <Badge
+                      className={`${area.status === "Active" ? "bg-green-500/20 text-green-400 border-green-500/50" :
+                          area.status === "Ongoing" ? "bg-yellow-500/20 text-yellow-400 border-yellow-500/50" :
+                            "bg-blue-500/20 text-blue-400 border-blue-500/50"
+                        }`}
                     >
                       {area.status}
                     </Badge>
@@ -192,7 +190,7 @@ const ResearchSection = () => {
 
                   {/* Shimmer Effect on Hover */}
                   <div className="absolute inset-0 shimmer-effect opacity-0 group-hover:opacity-100 transition-opacity z-10" />
-                  
+
                   <div className="p-8 relative z-20 h-full flex flex-col">
                     <div className="flex items-start justify-between mb-6">
                       <div className="p-4 bg-primary/20 rounded-xl group-hover:bg-primary/30 transition-colors group-hover:scale-110 transform duration-300">
@@ -203,15 +201,15 @@ const ResearchSection = () => {
                         <p className="text-lg font-bold text-primary">{area.publications}</p>
                       </div>
                     </div>
-                    
+
                     <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors leading-tight">
                       {area.title}
                     </h3>
-                    
+
                     <p className="text-gray-300 mb-6 leading-relaxed flex-grow">
                       {isHovered ? area.abstract : area.description}
                     </p>
-                    
+
                     {/* Tools Used */}
                     <div className="mb-6">
                       <p className="text-sm text-primary font-medium mb-2">Tools & Software:</p>
@@ -223,7 +221,7 @@ const ResearchSection = () => {
                         ))}
                       </div>
                     </div>
-                    
+
                     {/* Tags */}
                     <div className="flex flex-wrap gap-2 mb-6">
                       {area.tags.map((tag) => (
