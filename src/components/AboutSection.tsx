@@ -14,10 +14,10 @@ const AboutSection = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-white">
             About <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Dr. Mehta</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto px-2">
             Multidisciplinary researcher pushing the boundaries of fluid mechanics and computational science
           </p>
         </motion.div>
@@ -31,7 +31,7 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <Card className="glass-card p-8 hover-lift border-primary/20">
+            <Card className="glass-card p-4 sm:p-6 lg:p-8 hover-lift border-primary/20">
               {/* Profile Image */}
               <div className="relative mb-8">
                 <div className="aspect-square rounded-2xl overflow-hidden mb-6 relative group">
@@ -108,11 +108,11 @@ const AboutSection = () => {
             viewport={{ once: true }}
           >
             {/* Biography */}
-            <Card className="glass-card p-8 hover-lift">
-              <h3 className="text-3xl font-bold mb-6 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+            <Card className="glass-card p-4 sm:p-6 lg:p-8 hover-lift">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
                 Biography
               </h3>
-              <p className="text-lg leading-relaxed text-gray-300 mb-8">
+              <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-gray-300 mb-6 sm:mb-8">
                 I have proficiency modelling micro and nano scale flow and ionic transport phenomenon using finite element method-based solver, COMSOL Multiphysics.
                 Also, the experimental and mathematical modelling has been recently done for nutrient transport inside the plant root in flowing condition.
                 Further, I have proficiency modelling forced and natural convective heat transport inside complex geometries utilizing Newtonian and non-Newtonian fluids numerically using ANSYS Fluent and COMSOL Multiphysics.
@@ -176,8 +176,8 @@ const AboutSection = () => {
             </Card>
 
             {/* Career Timeline */}
-            <Card className="glass-card p-8 hover-lift">
-              <h3 className="text-3xl font-bold mb-8 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent flex items-center gap-3">
+            <Card className="glass-card p-4 sm:p-6 lg:p-8 hover-lift">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent flex items-center gap-2 sm:gap-3">
                 <Calendar className="h-8 w-8 text-primary" />
                 Career Timeline
               </h3>

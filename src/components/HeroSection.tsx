@@ -42,15 +42,15 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        {/* Name with Enhanced Kinetic Animation - Fixed to single line */}
+        {/* Name with Enhanced Kinetic Animation */}
         <motion.h1
-          className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 whitespace-nowrap"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 leading-tight"
           initial={{ opacity: 0, y: 50, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <motion.span
-            className="bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent inline-block"
+            className="bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent inline-block break-words"
             animate={{
               backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
             }}
@@ -67,17 +67,17 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.8 }}
         >
-          <div className="mb-6">
-            <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 font-light mb-2">
+          <div className="mb-4 sm:mb-6 space-y-1 sm:space-y-2 px-2">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 font-light leading-snug">
               National Post Doctoral Fellow
             </p>
-            <p className="text-sm sm:text-base text-gray-400 font-light mb-4">
+            <p className="text-xs sm:text-sm md:text-base text-gray-400 font-light leading-snug">
               (Anusandhan National Research Foundation, Government of India)
             </p>
-            <p className="text-lg sm:text-xl text-primary font-medium">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-primary font-medium leading-snug">
               Department of Mechanical Engineering
             </p>
-            <p className="text-base sm:text-lg text-gray-300">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 leading-snug">
               Indian Institute of Technology Guwahati, Guwahati-781039, Assam
             </p>
           </div>
@@ -90,7 +90,7 @@ const HeroSection = () => {
           transition={{ delay: 1.1, duration: 0.8 }}
         >
           <motion.p
-            className="text-lg sm:text-xl text-primary mb-8 font-medium"
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-primary mb-6 sm:mb-8 font-medium px-2 leading-snug"
             animate={{
               textShadow: [
                 "0 0 20px hsl(188 100% 43% / 0.5)",
@@ -110,11 +110,11 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.4, duration: 0.8 }}
         >
-          <div className="flex flex-wrap justify-center gap-3 mb-10 font-mono text-sm">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-10 font-mono text-xs sm:text-sm px-2">
             {["CFD", "Microfluidics", "Nanofluidics", "Heat Transfer", "COMSOL", "MATLAB"].map((tag, index) => (
               <motion.span
                 key={tag}
-                className="glass-card px-4 py-2 text-primary border-primary/50 hover:border-primary transition-all cursor-default"
+                className="glass-card px-3 py-1.5 sm:px-4 sm:py-2 text-primary border-primary/50 hover:border-primary transition-all cursor-default"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.6 + index * 0.1, duration: 0.5 }}
@@ -136,7 +136,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.8, duration: 0.8 }}
         >
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size="lg"

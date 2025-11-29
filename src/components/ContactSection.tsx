@@ -223,6 +223,17 @@ const ContactSection = () => {
                 Response time: Usually within 24-48 hours
               </p>
             </div>
+
+            {/* QR Code */}
+            <div className="mt-6 flex justify-center">
+              <div className="p-4 bg-white rounded-lg shadow-lg">
+                <img
+                  src="/frame (2).png"
+                  alt="Contact QR Code"
+                  className="w-48 h-48 sm:w-56 sm:h-56 object-contain"
+                />
+              </div>
+            </div>
           </Card>
         </div>
 
