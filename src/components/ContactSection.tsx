@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Linkedin, Send } from "lucide-react";
 import { useState } from "react";
+import ThumbnailSlideshow from "./ThumbnailSlideshow";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -236,6 +237,9 @@ const ContactSection = () => {
             </div>
           </Card>
         </div>
+
+        {/* Thumbnail Gallery Slideshow */}
+        <ThumbnailSlideshow />
 
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-primary/20 text-center">
